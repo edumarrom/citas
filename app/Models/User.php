@@ -41,4 +41,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Un usuario puede pertenecer a muchas compañías
+    public function companias()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+    // Un usuario tiene muchas citas
+    public function citas()
+    {
+        return $this->hasMany(Cita::class);
+    }
 }
