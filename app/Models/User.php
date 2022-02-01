@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Symfony\Component\CssSelector\Node\FunctionNode;
 
 class User extends Authenticatable
 {
@@ -52,5 +53,21 @@ class User extends Authenticatable
     public function citas()
     {
         return $this->hasMany(Cita::class);
+    }
+
+    //Muchos usuarios pueden ser pacientes
+    public function pacientes()
+    {
+        return $this->hasMany(Paciente::class);
+    }
+
+    public function administradores()
+    {
+        return $this->hasMany(Administrador::class);
+    }
+
+    public function especialistas()
+    {
+        return $this->hasMany(Especialista::class);
     }
 }
