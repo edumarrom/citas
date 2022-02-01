@@ -9,6 +9,11 @@ class Especialista extends Model
 {
     use HasFactory;
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     // Un especialista puede pertenecer a muchas compañias
     public function companias()
     {
@@ -24,10 +29,5 @@ class Especialista extends Model
     public function citas()
     {
         return $this->hasMany(Cita::class);
-    }
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
     }
 }

@@ -10,9 +10,9 @@ class Compania extends Model
     use HasFactory;
 
     // Una compania puede pertenecer a muchos usuarios
-    public function users()
+    public function pacientes()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(Paciente::class);
     }
 
     // Una compañia puede pertenecer a muchos especialistas

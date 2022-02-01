@@ -43,31 +43,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // Un usuario puede pertenecer a muchas compañías
-    public function companias()
+    //Los usuarios puden ser administradores, especialistas o pacientes
+    public function administrador()
     {
-        return $this->belongsToMany(User::class);
+        return $this->hasOne(Administrador::class);
     }
 
-    // Un usuario tiene muchas citas
-    public function citas()
+    public function especialista()
     {
-        return $this->hasMany(Cita::class);
+        return $this->hasOne(Especialista::class);
     }
 
-    //Muchos usuarios pueden ser pacientes
-    public function pacientes()
+    public function paciente()
     {
-        return $this->hasMany(Paciente::class);
-    }
-
-    public function administradores()
-    {
-        return $this->hasMany(Administrador::class);
-    }
-
-    public function especialistas()
-    {
-        return $this->hasMany(Especialista::class);
+        return $this->hasOne(Paciente::class);
     }
 }
