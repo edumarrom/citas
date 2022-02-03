@@ -52,7 +52,7 @@
             </div>
         @endif
         <a href="{{ route('dashboard') }}"
-            class="text-xl text-gray-500 dark:text-gray-300">Gestión de citas online</a>
+            class="text-4xl text-gray-500 dark:text-gray-300">Gestión de citas online</a>
     </div>
 </body>
 

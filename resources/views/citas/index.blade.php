@@ -71,9 +71,9 @@
             </div>
         </div>
     </div>
-    <div class="max-w-sm mx-auto sm:px-6 lg:px-8 text-center">
+    <div class="py-2 max-w-sm mx-auto sm:px-6 lg:px-8 text-center">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-4 bg-gray-300 border-b border-gray-100 text-2xl">
+            <div class="p-4 bg-gray-300 hover:bg-gray-400 border-b border-gray-100 text-2xl">
                 <a href="{{ route('dashboard') }}" class="px-4 py-2 hover:underline">Volver</a>
             </div>
         </div>
