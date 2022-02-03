@@ -9,6 +9,10 @@ class Cita extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'fecha_hora' => 'datetime',
+    ];
+
     // Una cita tiene un usuario (nullable)
     public function user()
     {
