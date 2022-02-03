@@ -2,24 +2,17 @@
     <x-slot name="cabecera">
         Compañías Aseguradoras
     </x-slot>
-    {{-- <x-slot name="paso">
-        Seleccione Compaía Aseguradora:
-    </x-slot> --}}
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-3xl bg-white border-b border-gray-200">
-                    Seleccione Compañía Aseguradora:
-                </div>
-        </div>
-    </div>
-    <div class="py-2 max-w-xl mx-auto sm:px-6 lg:px-8 text-xl text-center border">
+    <x-slot name="paso">
+        Seleccione Compañía Aseguradora:
+    </x-slot>
+    <div class="py-2 max-w-xl mx-auto sm:px-6 lg:px-8 text-xl text-center">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg border">
             @foreach ($companias as $compania)
                 @php
                     if ($companias_usuario->contains($compania)) {
                         $class = 'p-6 bg-white hover:bg-gray-200 border-b border-gray-200 text-gray-900 hover:text-black hover:text-decoration-line: underline';
                     } else {
-                        $class = 'p-6 bg-gray-50 border-b border-gray-300 text-gray-400';
+                        $class = 'p-6 bg-gray-100 border-b border-gray-300 text-gray-400';
                     }
                 @endphp
                 <div class=" {{ $class }} ">
