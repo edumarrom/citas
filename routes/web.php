@@ -22,10 +22,16 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
-Route::get('/citas', [CitaController::class, 'index'])
-    ->middleware(['auth'])->name('ver-citas');
+/* ¿¿Por qué group function?? */
+Route::middleware(['auth'])->group(function () {
+    Route::get('/citas', [CitaController::class, 'index'])
+        ->middleware(['auth'])->name('ver-citas');
 
-Route::get('/cita/create', [CitaController::class, 'create' ])
-    ->middleware(['auth'])->name('crear-cita');
+    Route::get('/cita/create', [CitaController::class, 'create'])
+        ->middleware(['auth'])->name('crear-cita');
+
+    Route::get('/cita/create/{compania}', [CitaController::class, 'createEspecialidad'])
+        ->name('crear-cita-especialidad');
+});
