@@ -27,11 +27,14 @@ require __DIR__ . '/auth.php';
 /* ¿¿Por qué group function?? */
 Route::middleware(['auth'])->group(function () {
     Route::get('/citas', [CitaController::class, 'index'])
-        ->middleware(['auth'])->name('ver-citas');
+        ->name('ver-citas');
 
     Route::get('/cita/create', [CitaController::class, 'create'])
-        ->middleware(['auth'])->name('crear-cita');
+        ->name('crear-cita');
 
     Route::get('/cita/create/{compania}', [CitaController::class, 'createEspecialidad'])
         ->name('crear-cita-especialidad');
+
+    Route::get('/cita/create/{compania}/{especialidad}', [CitaController::class, 'createEspecialista'])
+        ->name('crear-cita-especialista');
 });
