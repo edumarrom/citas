@@ -30,7 +30,7 @@
     <div class="py-2 max-w-sm mx-auto sm:px-6 lg:px-8 text-center">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-4 bg-gray-300 hover:bg-gray-400 border-b border-gray-100 text-2xl">
-                <a href="{{ route('crear-cita') }}" class="px-4 py-2 hover:underline">Atrás</a>
+                <a href="{{ route('crear-cita-compania') }}" class="px-4 py-2 hover:underline">Atrás</a>
             </div>
         </div>
     </div>

@@ -30,7 +30,7 @@ Route::middleware(['auth'])->group(function () {
         ->name('ver-citas');
 
     Route::get('/cita/create', [CitaController::class, 'create'])
-        ->name('crear-cita');
+        ->name('crear-cita-compania');
 
     Route::get('/cita/create/{compania}', [CitaController::class, 'createEspecialidad'])
         ->name('crear-cita-especialidad');
@@ -40,4 +40,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/cita/create/{compania}/{especialidad}/{especialista}', [CitaController::class, 'createFechaHora'])
         ->name('crear-cita-fecha-hora');
+
+    Route::get('/cita/create/{compania}/{cita}', [CitaController::class, 'createConfirmar'])
+        ->name('crear-cita-confirmar');
 });

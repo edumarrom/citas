@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cita;
 use App\Models\Compania;
 use App\Models\Especialidad;
 use App\Models\Especialista;
@@ -41,11 +42,27 @@ class CitaController extends Controller
             'compania' => $compania,
             'especialidad' => $especialidad,
             'especialistas' => $especialidad->especialistas,
+            /* Esto no está bien, porque pueden aparecer especialistas que no pertenecen a la compania,
+                aunque después en la vista podemos filtrar los datos para que solo aparezcan los que pertenecen a la compania
+            */
         ]);
     }
 
     public function createFechaHora(Compania $compania, Especialidad $especialidad, Especialista $especialista)
     {
-        return "solo falta pillar fecha y hora.";
+        return view('citas.create-fecha-hora', [
+            'compania' => $compania,
+            'especialidad' => $especialidad,
+            'especialista' => $especialista,
+            'citas' => $especialista->citas,
+        ]);
+    }
+
+    public function createConfirmar(Compania $compania, Cita $cita)
+    {
+        return view('citas.create-confirmar', [
+            'compania' => $compania,
+            'cita' => $cita,
+        ]);
     }
 }
