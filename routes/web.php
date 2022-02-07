@@ -37,4 +37,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/cita/create/{compania}/{especialidad}', [CitaController::class, 'createEspecialista'])
         ->name('crear-cita-especialista');
+
+    Route::get('/cita/create/{compania}/{especialidad}/{especialista}', [CitaController::class, 'createFechaHora'])
+        ->name('crear-cita-fecha-hora');
 });

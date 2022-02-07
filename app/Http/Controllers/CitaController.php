@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Compania;
 use App\Models\Especialidad;
+use App\Models\Especialista;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,6 +37,15 @@ class CitaController extends Controller
 
     public function createEspecialista(Compania $compania, Especialidad $especialidad)
     {
-        return "Creando cita: Toca seleccionar especialista.";
+        return view('citas.create-especialista', [
+            'compania' => $compania,
+            'especialidad' => $especialidad,
+            'especialistas' => $especialidad->especialistas,
+        ]);
+    }
+
+    public function createFechaHora(Compania $compania, Especialidad $especialidad, Especialista $especialista)
+    {
+        return "solo falta pillar fecha y hora.";
     }
 }

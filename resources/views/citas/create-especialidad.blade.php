@@ -8,9 +8,11 @@
     <div class="py-2 max-w-xl mx-auto sm:px-6 lg:px-8 text-xl text-center">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg border">
             @foreach ($especialidades as $especialidad)
-                <div class="p-6 bg-white hover:bg-gray-200 border-b border-gray-200 text-gray-900
+                <div
+                    class="p-6 bg-white hover:bg-gray-200 border-b border-gray-200 text-gray-900
                     hover:text-black hover:text-decoration-line: underline">
-                    <a class="px-4 py-2" href=" {{ route('crear-cita-especialista', [$compania, $especialidad]) }} ">
+                    <a class="px-4 py-2"
+                        href=" {{ route('crear-cita-especialista', [$compania, $especialidad]) }} ">
                         {{ $especialidad->denominacion }}
                     </a>
                 </div>
