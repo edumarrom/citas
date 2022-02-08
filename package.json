@@ -9,7 +9,7 @@
         "prod": "npm run production",
         "production": "mix --production"
     },
-    "devDependencies": {
+    "dependencies": {
         "@tailwindcss/forms": "^0.4.0",
         "alpinejs": "^3.4.2",
         "autoprefixer": "^10.1.0",
